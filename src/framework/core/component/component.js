@@ -1,4 +1,4 @@
-import { wfm } from '../tools/util';
+import { wfm } from '../../tools/util';
 
 export class Component{
     constructor(config){

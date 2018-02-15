@@ -1,5 +1,6 @@
 import { router } from '../tools/router';
 import { wfm } from '../tools/util';
+import { renderComponent } from './component/render.component';
 
 export class Module {
     constructor(config){
@@ -16,7 +17,7 @@ export class Module {
 
     initComponents(){
         this.bootstrapComponent.render()
-        this.components.forEach(this.renderComponent.bind(this))
+        this.components.forEach(renderComponent)
     }
 
     initRoutes() {
@@ -39,17 +40,9 @@ export class Module {
             <${route.component.selector}>
             </${route.component.selector}>
         `
-        this.renderComponent(route.component)
+        renderComponent(route.component)
 
     }
 
-    renderComponent(c) {
-        //вызывает коллбек компонента если от был реализован
-        if (!wfm.isUndefined(c.onInit)) c.onInit() 
 
-        c.render()
-
-        //вызывает коллбек компонента если от был реализован
-        if (!wfm.isUndefined(c.afterInit)) c.afterInit()
-    }
 }
