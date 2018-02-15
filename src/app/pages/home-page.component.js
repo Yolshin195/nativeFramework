@@ -11,6 +11,16 @@ class HomePageComponent extends WFMComponent {
         }
     }
 
+    //функция срабатывет перед рендерингом модуля в дом дерево инмциализации модуля
+    onInit() {
+        console.log('Component init') 
+    }
+
+    //функция срабатывает после добавления модуля в дом дерево
+    afterInit() {
+        console.log('Component after init')
+    }
+
     goToTabs(event) {
         event.preventDefault() // отменяем все события у данного эл.
         router.navigate('tabs')
