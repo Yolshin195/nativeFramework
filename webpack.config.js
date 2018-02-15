@@ -23,6 +23,7 @@ module.exports = {
         },
 
         plugins: [
+            //плагин генирируте index.html с подключеным js 
             new HtmlWebpackPlugin({  
                 template: './index.html'
             })
