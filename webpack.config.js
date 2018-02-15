@@ -22,6 +22,13 @@ module.exports = {
             port: 4200
         },
 
+        // задали абсолютный путь до фреймворка по имени framework
+        resolve: {
+            alias: {
+                'framework': path.join(__dirname, 'src/framework')
+            }
+        },
+
         plugins: [
             //плагин генирируте index.html с подключеным js 
             new HtmlWebpackPlugin({  

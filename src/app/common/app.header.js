@@ -1,4 +1,4 @@
-import { WFMComponent } from '../../framework/index';
+import { WFMComponent } from 'framework';
 
 class AppHeader extends WFMComponent {
     constructor(config) {
