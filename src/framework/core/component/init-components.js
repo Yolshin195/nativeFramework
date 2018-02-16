@@ -9,4 +9,5 @@ export function initComponents(bootstrap, components) {
     }
 
     [bootstrap, ...components].forEach(renderComponent)
+
 }
