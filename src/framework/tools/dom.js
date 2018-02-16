@@ -26,7 +26,7 @@ class DOMManipulator {
     }
 
     css(styles) {
-        if (_.isUndefined(styles)) return this.nativeElement.style
+        if (wfm.isUndefined(styles)) return this.nativeElement.style
         
         Object.keys(styles).forEach(key => {
             this.nativeElement.style[key] = styles[key]
@@ -71,7 +71,7 @@ class DOMManipulator {
         return $(this.nativeElement.parentNode)
     }
 
-    attr(name, value) {
+    attr(name, value=null) {
         if(wfm.isNull(value)) {
             return this.nativeElement.getAttribute(name)
         }

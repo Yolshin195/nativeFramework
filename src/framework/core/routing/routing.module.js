@@ -4,8 +4,9 @@ import { router } from './router';
 import { renderComponent } from '../component/render.component';
 
 export class RoutingModule {
-    constructor(routes) {
+    constructor(routes, dispather) {
         this.routes = routes 
+        this.dispather = dispather 
     }
 
     init() {
@@ -35,6 +36,8 @@ function renderRoute() {
         </${route.component.selector}>
     `)
     renderComponent(route.component)
+
+    this.dispather.emit('routing.change-page')
 
 }
 
