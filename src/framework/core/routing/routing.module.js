@@ -1,4 +1,5 @@
 import { wfm } from '../../tools/util';
+import { $ } from '../../tools/dom';
 import { router } from './router';
 import { renderComponent } from '../component/render.component';
 
@@ -29,10 +30,10 @@ function renderRoute() {
         route = this.routes.find(r => r.path === '**')
     }
 
-    document.querySelector('router-outlet').innerHTML = `
+    $('router-outlet').html(`
         <${route.component.selector}>
         </${route.component.selector}>
-    `
+    `)
     renderComponent(route.component)
 
 }

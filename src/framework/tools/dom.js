@@ -85,7 +85,7 @@ class DOMManipulator {
     }
 
     findAll(selector) {
-        return Array.from(this.nativeElement.querySelectorAll(selectro)).map(e => $(e))
+        return Array.from(this.nativeElement.querySelectorAll(selector)).map(e => $(e))
         
     }
 }
