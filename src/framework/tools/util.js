@@ -9,6 +9,14 @@ const wfm = {
 
     isUndefined(d) {
         return typeof d === 'undefined'
+    },
+
+    isNull(d) {
+        return d === null 
+    },
+
+    isString(d) {
+        return typeof d === 'string'
     }
 }
 
