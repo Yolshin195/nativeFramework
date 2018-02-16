@@ -3,6 +3,11 @@ import { WFMComponent, router } from '../../framework/index';
 class HomePageComponent extends WFMComponent {
     constructor(config){
         super(config)
+
+        this.data = {
+            title: 'Главная страница работает!!!',
+            linckTitle : 'Перейти на другую страницу'
+        }
     }
 
     events() {
@@ -35,11 +40,11 @@ export const homePageComponent = new HomePageComponent({
         <div class="col s6 offset-s3" style="margin-top: 40px;">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-              <span class="card-title">Главная страница</span>
+              <span class="card-title">{{ title }}</span>
               <p>Пока тут нет никакого функционала</p>
             </div>
             <div class="card-action">
-              <a href="#not-existing-path" class="js-link">Перейти на другую страницу</a>
+              <a href="#not-existing-path" class="js-link">{{ linckTitle }}</a>
             </div>
           </div>
         </div>
