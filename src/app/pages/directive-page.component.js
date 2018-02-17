@@ -1,4 +1,4 @@
-import { WFMComponent, router } from '../../framework/index';
+import { WFMComponent, router } from 'framework';
 
 class DirectivePageComponent extends WFMComponent {
     constructor(config){

@@ -1,6 +1,9 @@
 import { wfm } from '../../tools/util';
 import { $ } from '../../tools/dom';
 
+import { parsePipe } from '../pipes/parse-pipe';
+import { applyPipe } from '../pipes/apply-pipe';
+
 export class Component{
     constructor(config){
         this.template = config.template
@@ -50,8 +53,16 @@ function compileTemplate(template, data) {
 
     template = template.replace(regex, (str, d) => {
         let key = d.trim()
+        let pipe
         
-        return data[key]
+        if (hasPipe(key)) {
+            pipe = parsePipe(key)
+            key = getKeyFromPipe(key)
+        }
+        
+        if ( wfm.isUndefined(pipe) ) return data[key]
+
+        return applyPipe(pipe, data[key])
     })
 
     return template;
@@ -65,4 +76,12 @@ function initStyles(styles) {
     $style.html(styles)
 
     $(document.head).append($style)
+}
+
+function hasPipe(key) {
+    return key.includes('|')
+}
+
+function getKeyFromPipe(key) {
+    return key.split('|')[0].trim()
 }
