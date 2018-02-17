@@ -9,6 +9,7 @@ import { router } from './core/routing/router'
 import { wfm } from './tools/util'
 import { $ } from './tools/dom'
 import { EventEmitter } from './tools/event-emitter'
+import { http } from './tools/http'
 
 export {
     WFMModule,
@@ -19,5 +20,6 @@ export {
     router,
     wfm,
     $,
-    EventEmitter
+    EventEmitter,
+    http
 }
